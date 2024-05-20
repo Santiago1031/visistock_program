@@ -1,9 +1,18 @@
-export default function LoginPage() {
+"use client"
+
+import { Form } from "@/components/Form"
+
+export default function LoginPage () {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>
-        LoginPage
-      </h1>
-    </main>
-  );
+    <>
+      <Form title="title" onSubmit={() => {}}>
+        <Form.Input
+        label="Label"
+        name="name"
+        placeholder="Name..."
+        type="text"
+      />
+      </Form>
+    </>
+  )
 }
