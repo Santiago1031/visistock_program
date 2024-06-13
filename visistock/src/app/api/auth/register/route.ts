@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
         });
 
         const response = NextResponse.json(
-            { newUser: rest, message: messages.succes.userCreated },
+            { newUser: rest, message: messages.success.userCreated },
             { status: 200 }
         );
 

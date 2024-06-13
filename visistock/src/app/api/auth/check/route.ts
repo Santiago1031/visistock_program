@@ -13,7 +13,7 @@ export async function GET() {
         // Validar que haya token
         if(!token) {
             return NextResponse.json(
-                { message: messages.error.notAuthorized}, 
+                { message: messages.error.notAuthorized }, 
                 { status: 400 }
             );
         }
@@ -35,7 +35,7 @@ export async function GET() {
             }
 
             return NextResponse.json(
-                { isAuthorized: true, message: messages.succes.authorized },
+                { isAuthorized: true, message: messages.success.authorized },
                 { status: 200 }
             );
         } catch (error) {

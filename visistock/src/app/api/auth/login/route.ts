@@ -1,7 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
 import { connectMongoDB } from "@/libs/mongodb";
 import User, { IUser } from "@/models/User";
 import { messages } from "@/utils/messages";
-import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -50,11 +50,11 @@ export async function POST(request: NextRequest) {
         });
 
         const response = NextResponse.json(
-            { userLogged: rest, message: messages.succes.userLogged },
+            { userLogged: rest, message: messages.success.userLogged },
             { status: 200 }
         );
 
-        response.cookies.set('auth:_cookie', token, {
+        response.cookies.set("auth_cookie", token, {
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             maxAge: 86400,
